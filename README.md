@@ -5,7 +5,10 @@
 ## Description
 Build of my portfolio but with React
 
-[Live site here](https://rytc.github.com/ReactPortfolio)
+![brave_nKd51GQLdj](https://user-images.githubusercontent.com/31718059/149604693-ee9e9ec1-3379-45fc-8886-a5805f059ec7.png)
+
+
+[Live site here](https://rytc.github.io/ReactPortfolio)
 
 ## Table of Contents
 - [Installation](#Installation)
