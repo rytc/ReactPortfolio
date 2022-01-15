@@ -6,24 +6,56 @@ import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import projects from "./projects"
+import { Component } from "react/cjs/react.production.min";
 
 
-function App() {
-  return (
-    <>
-    <Header />
-    <main className="container mt-4">
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/portfolio" element={<Portfolio projects={projects}/>} />
-          <Route exact path="/contact" element={<Contact />} />
-        </Routes>
-      </Router>
-    </main>
-    <Footer />
-    </>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mode: 'home'
+    }
+    this.onLinkClick = this.onLinkClick.bind(this);
+  }
+
+  onLinkClick(event) {
+    if(event.target.id == "about") {
+      this.setState({mode: 'home'});
+    } else if(event.target.id == 'portfolio') {
+      this.setState({mode: 'portfolio'});
+    } else if(event.target.id == "contact") {
+      this.setState({mode: 'contact'});
+    }
+
+  }
+
+  render() {
+    
+    if(this.state.mode == 'portfolio') {
+      return (
+        <>
+          <Header onLinkClick={this.onLinkClick} />
+          <main className="container mt-4"><Portfolio projects={projects} /></main>
+        </>
+      )     
+    } else if(this.state.mode == 'contact') {
+      return (
+          <>
+            <Header onLinkClick={this.onLinkClick} />
+            <main className="container mt-4"><Contact /></main>
+          </>
+        )
+    } else {
+      return (
+          <>
+            <Header onLinkClick={this.onLinkClick}/>
+            <main className="container mt-4"><Home /></main>
+          </>
+        )
+    }
+
+  }
 }
+
 
 export default App;

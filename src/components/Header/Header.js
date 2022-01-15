@@ -2,6 +2,7 @@ import GithubIcon from "../../images/github.png"
 import LinkedInIcon from "../../images/linkedin.png"
 
 const Header = (props) => {
+    const onLinkClick = props.onLinkClick;
     return (
         <nav className="navbar navbar-expand-lg shadow pt-4">
             <div className="container">
@@ -14,9 +15,9 @@ const Header = (props) => {
 
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                        <li className="nav-item"><a className="nav-link" href="/">About Me</a></li>
-                        <li className="nav-item"><a className="nav-link" href="/portfolio">Portfolio</a></li> 
-                        <li className="nav-item"><a className="nav-link" href="/contact">Contact</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#" id="about" onClick={onLinkClick}>About Me</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#" id="portfolio" onClick={onLinkClick}>Portfolio</a></li> 
+                        <li className="nav-item"><a className="nav-link" href="#" id="contact" onClick={onLinkClick}>Contact</a></li>
                         <li className="nav-item ">
                             <a className="nav-link" href="https://rytc.io/RyanCapote_Resume.pdf">Resume</a>
                         </li>

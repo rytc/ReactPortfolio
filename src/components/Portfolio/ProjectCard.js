@@ -8,7 +8,7 @@ const ProjectCard = (props) => {
             <h3>{project.title}</h3> 
             <h6>{project.subtitle}</h6>
 
-        <p>{project.description}</p> 
+            <p>{project.description}</p> 
 
         <ul className="nav justify-content-center">
             {project.links.map(link => {
